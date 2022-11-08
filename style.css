@@ -9,6 +9,25 @@
     --card-color-primary: #f7dd43;
     --card-bg-color: #1d1c19;
     --bg: url(./assets/bg-yellow.svg);
+    --card-h2-color: #f7dd43;
+}
+
+body.qatar {
+    --card-tittle-border-color: #f33333;
+    --card-color-primary: #e1e1e6;
+    --card-bg-color: #202024;
+    --bg: url(./assets/bg-qatar.svg);
+    --card-h2-color: #e1e1e6;
+
+}
+
+body.brasil{
+    --card-tittle-border-color: #f7dd43;
+    --card-color-primary: #f7dd43;
+    --card-bg-color: #2629ce;
+    --bg: url(./assets/bg-brazil.svg);
+    --card-h2-color: #f7dd43;
+
 }
 
 body.blue {
@@ -16,6 +35,7 @@ body.blue {
     --card-color-primary: #338af3;
     --card-bg-color: #202024;
     --bg: url(./assets/bg-blue.svg);
+    --card-h2-color: #f7dd43;
 
 }
 
@@ -23,28 +43,30 @@ body.green {
     --card-tittle-border-color: #047c3f;
     --card-color-primary: #047c3f;
     --card-bg-color: #1A1F1B;
-    --bg: url(./assets/bg-green.svg);
+    --bg: url(./assets/brazil_10.jpg);
+    --card-h2-color: #f7dd43;
 
 }
-
-ul {
-    list-style: none;
-  }
 
 body{
     background-color: #121214;
     background-image: var(--bg);
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 body *{
     font-family: 'Roboto', sans-serif;
 }
 
+a{    
+    text-decoration: none;
+}
 
-
+ul {
+    list-style: none;
+  }
 
 
 #app{
@@ -59,10 +81,42 @@ header{
 
 }
 
-#cards{
+header>img{
+    width: 75px;
+    float: initial;
+    
+}
+
+header ul{
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+}
+
+header ul li a{
+    background: var(--card-bg-color);
+    padding: 5px;
+    text-decoration: none;
+    color: var(--card-color-primary);
+    border-radius: 6px;
+}
+
+
+
+main{
+    margin-bottom: 50px;
+    max-width: 1080px;
+}
+
+.cards{
     display: flex;
     flex-direction: column;
     gap: 32px;
+    justify-content: center;
 }
 
 .card{
@@ -70,8 +124,7 @@ header{
     text-align: center;
     background: var(--card-bg-color);
     border-radius: 6px;
-    border-bottom: 2px solid var(--card-color-primary);
-
+    border-bottom: 5px solid var(--card-color-primary);
 }
 
 .card h2{
@@ -85,7 +138,7 @@ header{
     width: fit-content;
     margin-inline: auto;
     margin-bottom: 53px;
-    color: #f7dd43;
+    color: var(--card-h2-color);
 }
 
 .card h2 span{
@@ -98,7 +151,6 @@ header{
     display: flex;
     flex-direction: column;
     gap: 24px;
-
     width: 270px;
 }
 
@@ -110,7 +162,7 @@ header{
 
 .card ul li + li{
     padding-top: 24px;
-    border-top: 1px solid #323238;
+    border-top: 1px solid var(--card-color-primary);
 }
 
 .card ul li strong{
@@ -120,6 +172,7 @@ header{
     color: #e1e1e6;
 }
 
+header ul li:hover,
 .card h2:hover,
 .card ul li strong:hover,
 .card ul li img:hover{
@@ -138,6 +191,83 @@ header{
     animation: appear 2s forwards;
 }
 
+.index{
+    background: var(--card-bg-color);
+    padding: 10px;
+    border-radius: 15px;
+    opacity: 0;
+    animation: appear 2s forwards;
+}
+
+/* .index:hover{
+    border: 1px solid #047c3f;
+} */
+
+.index h2{
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid var(--card-tittle-border-color);
+    border-radius: 6px;
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 23px;
+    color: var(--card-h2-color);
+}
+
+.index ul {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+}
+
+.index ul li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    font-size: 20px;
+    color: #e1e1e6;
+}
+
+
+@keyframes appear {
+    0% {
+        transform: translateY(-50px) ;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 700px) {
+    .cards{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    header ul{
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    
+    }
+}
+
+@media (max-width: 700px){
+    header ul{
+        flex-direction: column;
+        position: fixed;
+        left: 5px;
+        top: 25px;
+    }
+}
 /* 
 
 CONTROLE DE DELAY POR CSS
@@ -153,22 +283,3 @@ CONTROLE DE DELAY POR CSS
 .card:nth-child(3) {
     animation-delay: .4s;
 } */ 
-
-@keyframes appear {
-    0% {
-        transform: translateY(-50px) ;
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@media (min-width: 700px) {
-    #cards {
-        max-width: 670px;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-}

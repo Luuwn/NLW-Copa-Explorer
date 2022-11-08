@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo B</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="blue">
+    <div id="app">
+        <header>
+            <a href="index.html">
+                <img src="./assets/logo.svg" alt="Logo NLW Copa">
+            </a>
+            <img src="./assets/logo-cup-world.svg" alt="Logo da Copa 2022 do Qatar">
+
+            <ul>
+                <li>
+                    <a href="./groupA.html">Grupo A</a>
+                </li>
+                <li>
+                    <a href="./groupB.html">Grupo B</a>
+                </li>
+                <li>
+                    <a href="./groupC.html">Grupo C</a>
+                </li>
+                <li>
+                    <a href="./groupD.html">Grupo D</a>
+                </li>
+                <li>
+                    <a href="./groupE.html">Grupo E</a>
+                </li>
+                <li>
+                    <a href="./groupF.html">Grupo F</a>
+                </li>
+                <li>
+                    <a href="./groupG.html">Grupo G</a>
+                </li>
+                <li>
+                    <a href="./groupH.html">Grupo H</a>
+                </li>
+            </ul>
+        
+        </header>
+
+        <main id="cards-B" class="cards"></main>
+    </div>
+
+    <script src="./main.js"></script>
+    <script>
+        document.querySelector("#cards-B").innerHTML = 
+            createCard(
+                '21/11',
+                'segunda',
+                createGame('england', '10:00', 'iran')
+                +createGame('usa', '16:00', 'wales')
+            )
+            +createCard(
+                '25/11',
+                'sexta',
+                createGame('wales', '07:00', 'iran')
+                +createGame('england', '16:00', 'usa')
+            )
+            +createCard(
+                '29/11',
+                'terça',
+                createGame('wales', '16:00', 'england')
+                +createGame('iran', '16:00', 'usa')
+            )
+    </script>
+    
+</body>
+</html>
