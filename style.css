@@ -139,6 +139,7 @@ main{
     margin-inline: auto;
     margin-bottom: 53px;
     color: var(--card-h2-color);
+    
 }
 
 .card h2 span{
@@ -267,12 +268,12 @@ header ul li:hover,
         left: 5px;
         top: 150px;
     }
-    .cards, .index {
+    .index {
         display: flex;
         flex-direction: column;
         gap: 32px;
         justify-content: center;
-        width: 250px;
+        width: 200px;
         margin-left: auto;
     }
 }
