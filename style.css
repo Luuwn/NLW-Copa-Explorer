@@ -265,7 +265,15 @@ header ul li:hover,
         flex-direction: column;
         position: fixed;
         left: 5px;
-        top: 25px;
+        top: 150px;
+    }
+    .cards, .index {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        justify-content: center;
+        width: 250px;
+        margin-left: auto;
     }
 }
 /* 
